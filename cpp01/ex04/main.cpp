@@ -27,7 +27,7 @@ std::string replace_s(std::string s, std::string rep_s, std::string to_s)
 int main(int argc, char *argv[])
 {
     if (argc != 4)
-        return (-1);
+        return (1);
     std::string filename = argv[1];
     std::string rep_s = argv[2];
     std::string to_s = argv[3];
@@ -38,7 +38,10 @@ int main(int argc, char *argv[])
 
     if (ifs.fail()) {
         std::cerr << "Failed to open file." << std::endl;
-        return -1;
+        return 1;
+    }
+    if (rep_s == "") {
+        return 0;
     }
     while (getline(ifs, str)) {
         ofs << replace_s(str, rep_s, to_s) << std::endl;
