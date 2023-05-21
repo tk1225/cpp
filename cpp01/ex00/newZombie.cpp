@@ -2,9 +2,11 @@
 
 Zombie* newZombie(std::string name)
 {
+    Zombie *z;
+
     try
     {
-        Zombie *z = new Zombie(name);
+        z = new Zombie(name);
     }
     catch (std::bad_alloc)
     {
