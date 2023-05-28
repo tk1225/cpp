@@ -14,5 +14,5 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
     b2 = sign(point, b, c) < tmp;
     b3 = sign(point, c, a) < tmp;
 
-    return ((b1 == b2) && (b2 == b3));
+    return ((b1 == b2) && (b2 == b3) && (sign(point, a, b) != tmp));
 }
