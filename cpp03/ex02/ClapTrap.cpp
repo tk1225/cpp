@@ -7,6 +7,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
+    std::cout << "constructor called. Initialization list" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -37,7 +38,8 @@ void ClapTrap::attack(const std::string& target)
     {
         std::cout << "run out of ep" << std::endl;
     }
-    std::cout << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+    else
+        std::cout << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
     this->_energy_points --;
 }
 
@@ -47,7 +49,8 @@ void ClapTrap::takeDamage(unsigned int amount)
     {
         std::cout << "dead" << std::endl;
     }
-    std::cout << this->_name << " damaged " << amount << " points of damage!" << std::endl;
+    else
+        std::cout << this->_name << " damaged " << amount << " points of damage!" << std::endl;
     this->_hit_points -= amount;
 }
 
@@ -57,7 +60,8 @@ void ClapTrap::beRepaired(unsigned int amount)
     {
         std::cout << "run out of ep" << std::endl;
     }
-    std::cout << this->_name << " repaired " << amount << " points of recover!" << std::endl;
+    else
+        std::cout << this->_name << " repaired " << amount << " points of recover!" << std::endl;
     this->_energy_points --;
     this->_hit_points += amount;
 }
