@@ -2,16 +2,17 @@
 
 WrongAnimal::WrongAnimal()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Wrong Animal Default constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
+    std::cout << "Wrong Animal constructor called init type!" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Wrong Animal Destructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal   &WrongAnimalClass)

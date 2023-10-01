@@ -8,8 +8,9 @@
 class Dog : public Animal
 {
     public:
-    Dog();
-    virtual void makeSound() const;
+        Dog();
+        ~Dog();
+        virtual void makeSound() const;
 };
 
 #endif

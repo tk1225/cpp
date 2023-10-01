@@ -2,12 +2,12 @@
 
 Brain::Brain()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Brain Default constructor called" << std::endl;
 }
 
 Brain::~Brain()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Brain Destructor called" << std::endl;
 }
 
 Brain::Brain(const Brain   &BrainClass)

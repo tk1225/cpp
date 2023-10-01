@@ -18,12 +18,12 @@ int main()
     delete i;
     delete j;
 
-    // const WrongAnimal* meta = new WrongAnimal();
-    // const WrongAnimal* i = new WrongCat();
-    // std::cout << i->getType() << " **type" << std::endl;
-    // i->makeSound(); //will output  sound!
-    // meta->makeSound();
-    // delete meta;
-    // delete i;
-    // return 0;
+    const WrongAnimal* meta2 = new WrongAnimal();
+    const WrongAnimal* i2 = new WrongCat();
+    std::cout << i2->getType() << " **type" << std::endl;
+    i2->makeSound(); //will output  sound!
+    meta2->makeSound();
+    delete meta2;
+    delete i2;
+    return 0;
 }

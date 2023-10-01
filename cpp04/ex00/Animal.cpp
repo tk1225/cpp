@@ -2,16 +2,17 @@
 
 Animal::Animal()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Animal Default constructor called" << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type)
 {
+    std::cout << "Animal constructor called init type!" << std::endl;
 }
 
 Animal::~Animal()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Animal Destructor called" << std::endl;
 }
 
 Animal::Animal(const Animal   &AnimalClass)
