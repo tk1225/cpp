@@ -2,8 +2,22 @@
 
 WrongCat::WrongCat()
 {
-    std::cout << "WrongCat Default constructor called" << std::endl;
     this->_type = "WrongCat";
+    std::cout << this->_type << " constructor called" << std::endl;
+}
+
+WrongCat::WrongCat(const WrongCat   &WrongCatClass)
+{
+    *this = WrongCatClass;
+}
+
+WrongCat& WrongCat::operator=(const WrongCat &WrongCatClass)
+{
+    if (this != &WrongCatClass)
+    {
+        this->_type = WrongCatClass._type;
+    }
+    return *this;
 }
 
 WrongCat::~WrongCat( void )
@@ -13,5 +27,5 @@ WrongCat::~WrongCat( void )
 
 void WrongCat::makeSound() const
 {
-    std::cout << "nya" << std::endl;
+    std::cout << "WrongCat nya" << std::endl;
 }
