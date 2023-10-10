@@ -20,8 +20,6 @@ class Animal
         virtual void makeSound() const;
         std::string getType() const;
         void setType(std::string type);
-
-    Brain   *_brain;
 };
 
 #endif
