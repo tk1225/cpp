@@ -9,6 +9,8 @@ class Dog : public Animal
 {
     public:
         Dog();
+        Dog(const Dog   &DogClass);
+        Dog& operator=(const Dog &DogClass);
         ~Dog();
         virtual void makeSound() const;
 };

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: takumasaokamoto <takumasaokamoto@studen    +#+  +:+       +#+         #
+#    By: takuokam <takuokam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:31:13 by takuokam          #+#    #+#              #
-#    Updated: 2023/05/05 01:15:47 by takumasaoka      ###   ########.fr        #
+#    Updated: 2023/10/10 20:16:10 by takuokam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FLAGS	:= -Wall -Wextra -Werror -std=c++98 -pedantic-errors
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(FUNC)
 	$(CC) $(FLAGS) $(FUNC) -o $(NAME)
 
 clean:
