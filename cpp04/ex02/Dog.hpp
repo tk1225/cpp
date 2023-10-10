@@ -8,12 +8,14 @@
 
 class Dog : public Animal
 {
+    private:
+        Brain   *_brain;
     public:
-    Dog();
-    ~Dog();
-    Dog(const Dog   &DogClass);
-    Dog& operator=(const Dog &DogClass);
-    virtual void makeSound() const;
+        Dog();
+        ~Dog();
+        Dog(const Dog   &DogClass);
+        Dog& operator=(const Dog &DogClass);
+        virtual void makeSound() const;
 };
 
 #endif

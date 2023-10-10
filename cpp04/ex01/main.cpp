@@ -21,8 +21,10 @@ int main()
     }
 
     Cat cat_basic;
-    Cat tmp;
+    Cat cat_tmp;
     {
-        tmp  = cat_basic;
+        cat_tmp  = cat_basic;
     }
+    Animal *animal = new Dog();
+    delete animal;
 }

@@ -12,11 +12,13 @@ Brain::~Brain()
 
 Brain::Brain(const Brain   &BrainClass)
 {
+    std::cout<< "brain copy constructor called" << std::endl;
     *this = BrainClass;
 }
 
 Brain& Brain::operator=(const Brain &BrainClass)
 {
+    std::cout<< "brain = called" << std::endl;
     int i = 0;
 
     if (this != &BrainClass)

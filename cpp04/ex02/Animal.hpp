@@ -8,20 +8,18 @@
 class Animal
 {
     protected:
-    std::string _type;
+        std::string _type;
 
     public:
-    Animal();
-    Animal(std::string type);
-    Animal(const Animal   &AnimalClass);
-    Animal& operator=(const Animal &AnimalClass);
-    virtual ~Animal();
+        Animal();
+        Animal(std::string type);
+        Animal(const Animal   &AnimalClass);
+        Animal& operator=(const Animal &AnimalClass);
+        virtual ~Animal();
 
-    virtual void makeSound() const = 0;
-    std::string getType() const;
-    void setType(std::string type);
-
-    Brain   *_brain;
+        virtual void makeSound() const = 0;
+        std::string getType() const;
+        void setType(std::string type);
 };
 
 #endif

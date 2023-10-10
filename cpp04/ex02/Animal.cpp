@@ -3,7 +3,6 @@
 Animal::Animal()
 {
     std::cout << "Animal malloc Default constructor called" << std::endl;
-    this->_brain = new Brain();
 }
 
 Animal::Animal(std::string type) : _type(type)
@@ -14,7 +13,6 @@ Animal::Animal(std::string type) : _type(type)
 Animal::~Animal()
 {
     std::cout << "Animal delete Destructor called" << std::endl;
-    delete this->_brain;
 }
 
 Animal::Animal(const Animal   &AnimalClass)
@@ -24,11 +22,11 @@ Animal::Animal(const Animal   &AnimalClass)
 
 Animal& Animal::operator=(const Animal &AnimalClass)
 {
+    std::cout<< "animal = called" << std::endl;
     if (this != &AnimalClass)
     {
         this->_type = AnimalClass._type;
     }
-    std::cout<< "animal = called" << std::endl;
     return *this;
 }
 
