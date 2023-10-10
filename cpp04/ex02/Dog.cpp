@@ -11,6 +11,7 @@ Dog::Dog()
 Dog::Dog(const Dog   &DogClass)
 {
     std::cout<< "Dog copy constructor called" << std::endl;
+    this->_type = DogClass._type;
     this->_brain = new Brain(*DogClass._brain);
 }
 

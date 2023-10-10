@@ -11,7 +11,7 @@ Cat::Cat()
 Cat::Cat(const Cat   &CatClass)
 {
     std::cout<< "Cat copy constructor called" << std::endl;
-    this->_brain = CatClass._brain;
+    this->_type = CatClass._type;
     this->_brain = new Brain(*CatClass._brain);
 }
 
