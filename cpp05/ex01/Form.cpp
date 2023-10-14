@@ -5,10 +5,10 @@ Form::Form()
     std::cout << "Form Default constructor called" << std::endl;
 }
 
-Form::Form(std::string name, int gradeToBeSigned): _name(name), _gradeToBeSigned(gradeToBeSigned), _gradeToBeExecuted(0)
-{
-    std::cout << "Form  list init constructor called" << std::endl;
-}
+// Form::Form(std::string name, int gradeToBeSigned): _name(name), _gradeToBeSigned(gradeToBeSigned), _gradeToBeExecuted(0)
+// {
+//     std::cout << "Form  list init constructor called" << std::endl;
+// }
 
 // Form::Form(std::string name, int gradeToBeSigned, int gradeToBeExecuted): _name(name), _gradeToBeSigned(gradeToBeSigned), _gradeToBeSigned(gradeToBeSigned)
 // {
@@ -29,7 +29,7 @@ Form& Form::operator=(const Form &FormClass)
 {
     if (this != &FormClass)
     {
-        this->_grade = FormClass.getGrade();
+        this->_isSinged = FormClass.getIsSinged();
     }
     return *this;
 }
@@ -39,7 +39,12 @@ std::string Form::getName() const
     return (this->_name);
 }
 
-int Form::getGrade() const
+int Form::getGradeToBeSigned() const
 {
-    return (this->_grade);
+    return (this->_gradeToBeSigned);
+}
+
+int getGradeToBeExecuted() const
+{
+    return (this.);
 }
