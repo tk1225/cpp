@@ -30,6 +30,7 @@ class Bureaucrat
 
         std::string getName() const;
         int getGrade() const;
+        void signForm();
 };
 
 inline std::ostream& operator<<(std::ostream& os, const Bureaucrat &b) {

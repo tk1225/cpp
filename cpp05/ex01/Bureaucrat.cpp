@@ -56,4 +56,3 @@ int Bureaucrat::getGrade() const
 {
     return (this->_grade);
 }
-

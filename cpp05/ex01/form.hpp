@@ -3,21 +3,22 @@
 
 #include<string>
 #include<iostream>
+#include "Bureaucrat.hpp"
 
 class Form
 {
     private:
-        std::string _name;
+        const std::string _name;
         bool _isSinged;
-        int _grade;
+        const int _gradeToBeSigned;
+        const int _gradeToBeExecuted;
 
     public:
         Form();
-        Form(std::string name, int grade, bool _isSinged);
+        Form(std::string name, int gradeToBeSigned);
+        Form(std::string name, int gradeToBeSigned, int gradeToBeExecuted);
         Form(const Form   &FormClass);
         Form& operator=(const Form &FormClass);
-        // void increaseGrade();
-        // void decreaseGrade();
         virtual ~Form();
 
         class GradeTooHighException : public std::exception {
@@ -30,15 +31,18 @@ class Form
         };
 
         std::string getName() const;
-        int getGrade() const;
-        bool getIsSinged() const;
-        void beSigned();
+        int getGradeToBeSigned() const;
+        int getGradeToBeExecuted() const;
+        bool getIsSinged();
+        void beSigned(Bureaucrat &BureaucratClass);
 };
 
 inline std::ostream& operator<<(std::ostream& os, const Form &b) {
         os << b.getName();
-        os << ", Form grade ";
-        os << b.getGrade();
+        os << ", Form gradeToBeSiged is ";
+        os << b.getGradeToBeSigned();
+        os << " and, Form gradeToBeExecuted is ";
+        os << b.getGradeToBeExecuted();
         return os;
 }
 #endif
