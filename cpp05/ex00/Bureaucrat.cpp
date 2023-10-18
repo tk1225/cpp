@@ -8,6 +8,14 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
 {
     std::cout << "Bureaucrat  constructor called" << std::endl;
+    if (_grade < 1)
+    {
+        throw Bureaucrat::GradeTooHighException();
+    }
+    else if (_grade > 150)
+    {
+        throw Bureaucrat::GradeTooLowException();
+    }
 }
 
 Bureaucrat::~Bureaucrat()

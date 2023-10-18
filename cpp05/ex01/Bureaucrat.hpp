@@ -4,6 +4,7 @@
 #include<string>
 #include<iostream>
 
+class Form;
 class Bureaucrat
 {
     private:
@@ -30,7 +31,7 @@ class Bureaucrat
 
         std::string getName() const;
         int getGrade() const;
-        void signForm();
+        void signForm(Form& form);
 };
 
 inline std::ostream& operator<<(std::ostream& os, const Bureaucrat &b) {
