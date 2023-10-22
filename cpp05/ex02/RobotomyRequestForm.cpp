@@ -38,13 +38,17 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
     {
         throw RobotomyRequestForm::IsNotSignedException();
     }
-    std::srand( time(NULL) );
-    if (rand() % 2 == 0)
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(0, 1);
+    int randomValue = distribution(gen);
+    if (randomValue % 2 == 0)
     {
-        std::cout << "Robotomy success" << std::endl;
+        
+        std::cout << "Robotomy success!" << std::endl;
     }
     else
     {
-        std::cout << "Robotomy failed" << std::endl;
+        std::cout << "Robotomy failed!" << std::endl;
     }
 }

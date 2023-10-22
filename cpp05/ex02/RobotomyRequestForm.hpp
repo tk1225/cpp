@@ -3,7 +3,7 @@
 
 #include<string>
 #include<iostream>
-#include <cstdlib> 
+#include <random>
 #include "AForm.hpp"
 
 class Bureaucrat;
