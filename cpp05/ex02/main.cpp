@@ -6,34 +6,144 @@
 #include<string>
 #include<iostream>
 
-int main()
+int main(void)
 {
-    Bureaucrat b1 = Bureaucrat("B1", 2);
-    Bureaucrat b2 = Bureaucrat("B2", 140);
-    ShrubberyCreationForm s1_not_signed= ShrubberyCreationForm("target_test");
-    ShrubberyCreationForm s2_signed= ShrubberyCreationForm("target_test");
+	{
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		
+        Bureaucrat b1 = Bureaucrat("B1", 2);
+        ShrubberyCreationForm s1_not_signed= ShrubberyCreationForm("not_signed_shrubbery");
 
-    RobotomyRequestForm r1_not_signed= RobotomyRequestForm("target_test");
-    RobotomyRequestForm r2_signed= RobotomyRequestForm("target_test");
+		std::cout << "\033[34mTesting1(not signed)\033[0m" << std::endl;
 
-    PresidentialPardonForm p1_not_signed= PresidentialPardonForm("target_test");
-    PresidentialPardonForm p2_signed= PresidentialPardonForm("target_test");
+        std::cout << b1 << std::endl;
+        std::cout << s1_not_signed << std::endl;
 
-    try
-    {
-        // s1_not_signed.execute(b1);
-        // s2_signed.execute(b2);
-        s2_signed.beSigned(b1);
-        s2_signed.execute(b1);
+		try
+		{
+            b1.executeForm(s1_not_signed);
+		}
+		catch(std::exception & e)
+		{
+            std::cout << "error: " << e.what() << std::endl;
+		}
+		std::cout << std::endl;
 
-        r2_signed.beSigned(b1);
-        r2_signed.execute(b1);
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
 
-        p2_signed.beSigned(b1);
-        p2_signed.execute(b1);
-    }   
-    catch (std::exception & e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+		std::cout << std::endl;
+	}
+    std::cout << "--------------------------------------------------------------------------------------------------------------" << std::endl;
+	{
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		
+        Bureaucrat b1 = Bureaucrat("B1", 150);
+        ShrubberyCreationForm s2_signed= ShrubberyCreationForm("signed_shrubbery");
+
+		std::cout << "\033[34mTesting2(grade is too low to execute)\033[0m" << std::endl;
+
+        std::cout << b1 << std::endl;
+        std::cout << s2_signed << std::endl;
+
+		try
+		{
+            b1.signForm(s2_signed);
+            b1.executeForm(s2_signed);
+		}
+		catch(std::exception & e)
+		{
+            std::cout << "error: " << e.what() << std::endl;
+		}
+		std::cout << std::endl;
+
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+
+		std::cout << std::endl;
+	}
+    std::cout << "--------------------------------------------------------------------------------------------------------------" << std::endl;
+	{
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		
+        Bureaucrat b1 = Bureaucrat("B1", 2);
+        ShrubberyCreationForm s2_signed= ShrubberyCreationForm("signed_shrubbery");
+
+		std::cout << "\033[34mTesting3(signedShrubbery)\033[0m" << std::endl;
+
+        std::cout << b1 << std::endl;
+        std::cout << s2_signed << std::endl;
+
+		try
+		{
+            b1.signForm(s2_signed);
+            b1.executeForm(s2_signed);
+		}
+		catch(std::exception & e)
+		{
+            std::cout << "error: " << e.what() << std::endl;
+		}
+		std::cout << std::endl;
+
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+
+		std::cout << std::endl;
+	}
+    std::cout << "--------------------------------------------------------------------------------------------------------------" << std::endl;
+	{
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		
+        Bureaucrat b1 = Bureaucrat("B1", 15);
+        RobotomyRequestForm s2_signed= RobotomyRequestForm("signed_robotomy");
+
+		std::cout << "\033[34mTesting4(signedRobotomy)\033[0m" << std::endl;
+
+        std::cout << b1 << std::endl;
+        std::cout << s2_signed << std::endl;
+
+		try
+		{
+            b1.signForm(s2_signed);
+            for (size_t i = 0; i < 5; i++)
+            {
+                b1.executeForm(s2_signed);    
+            }
+		}
+		catch(std::exception & e)
+		{
+            std::cout << "error: " << e.what() << std::endl;
+		}
+		std::cout << std::endl;
+
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+
+		std::cout << std::endl;
+	}
+    std::cout << "--------------------------------------------------------------------------------------------------------------" << std::endl;
+        {
+            std::cout << "\033[34mConstructing\033[0m" << std::endl;
+            
+            Bureaucrat b1 = Bureaucrat("B1", 3);
+            PresidentialPardonForm s2_signed= PresidentialPardonForm("signed_presidential_pardon");
+
+            std::cout << "\033[34mTesting5(signedPresidentialPardon)\033[0m" << std::endl;
+
+            std::cout << b1 << std::endl;
+            std::cout << s2_signed << std::endl;
+
+            try
+            {
+                b1.signForm(s2_signed);
+                b1.executeForm(s2_signed);
+            }
+            catch(std::exception & e)
+            {
+                std::cout << "error: " << e.what() << std::endl;
+            }
+            std::cout << std::endl;
+
+            std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+
+            std::cout << std::endl;
+        }
+
+	return (0);
 }
