@@ -75,6 +75,6 @@ void Bureaucrat::signForm(Form& form)
     }
     else
     {
-        throw Form::GradeTooHighException();
+        throw Form::GradeTooLowException();
     }
 }
