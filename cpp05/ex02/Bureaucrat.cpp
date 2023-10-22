@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): _name("default"), _grade(150)
 {
     std::cout << "Bureaucrat Default constructor called" << std::endl;
 }
@@ -89,6 +89,6 @@ void Bureaucrat::executeForm(AForm const & form)
     else
     {
         std::cout << this->_name  << " can not executed " << form.getName() << std::endl;
-        throw AForm::GradeTooHighException();
+        throw AForm::GradeTooLowException();
     }
 }
