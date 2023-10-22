@@ -6,11 +6,6 @@ Form::Form(): _name("Form"), _gradeToBeSigned(0), _gradeToBeExecuted(0)
     std::cout << "Form Default constructor called" << std::endl;
 }
 
-Form::Form(std::string name, int gradeToBeSigned): _name(name), _gradeToBeSigned(gradeToBeSigned), _gradeToBeExecuted(0)
-{
-    std::cout << "Form  list init constructor called" << std::endl;
-}
-
 Form::Form(std::string name, int gradeToBeSigned, int gradeToBeExecuted): _name(name), _gradeToBeSigned(gradeToBeSigned), _gradeToBeExecuted(gradeToBeExecuted)
 {
     std::cout << "Form  list init constructor called" << std::endl;
@@ -57,4 +52,9 @@ bool Form::getIsSinged() const
 void Form::beSigned(Bureaucrat &BureaucratClass)
 {
     BureaucratClass.signForm(*this);
+}
+
+void Form::setSign(bool IsSign)
+{
+    this->_isSinged = IsSign;
 }

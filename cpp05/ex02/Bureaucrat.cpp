@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -66,7 +66,7 @@ int Bureaucrat::getGrade() const
     return (this->_grade);
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(AForm& form)
 {
     if (form.getGradeToBeSigned() >= this->_grade)
     {
@@ -75,6 +75,19 @@ void Bureaucrat::signForm(Form& form)
     }
     else
     {
-        throw Form::GradeTooHighException();
+        throw AForm::GradeTooHighException();
+    }
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+    if (form.getGradeToBeExecuted() >= this->_grade)
+    {
+        std::cout << this->_name  << " executed " << form.getName() << std::endl;
+    }
+    else
+    {
+        std::cout << this->_name  << " can not executed " << form.getName() << std::endl;
+        throw AForm::GradeTooHighException();
     }
 }
