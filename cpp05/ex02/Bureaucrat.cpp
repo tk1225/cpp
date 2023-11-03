@@ -75,6 +75,7 @@ void Bureaucrat::signForm(AForm& form)
     }
     else
     {
+        std::cout << this->_name  << " couldn't sign " << form.getName() << " because Bureaucrat's grade is not enough." << std::endl;
         throw AForm::GradeTooLowException();
     }
 }

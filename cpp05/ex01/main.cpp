@@ -8,6 +8,7 @@ int main()
     Form test = Form("test", 15, 15);
     Bureaucrat b1 = Bureaucrat("B1", 2);
     Bureaucrat b2 = Bureaucrat("B2", 20);
+    std::cout << test << std::endl;
 
     try
     {

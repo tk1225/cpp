@@ -39,6 +39,14 @@ class Form
 
 inline std::ostream& operator<<(std::ostream& os, const Form &b) {
         os << b.getName();
+        if (b.getIsSinged())
+        {
+            os << ", Form is signed";
+        }
+        else
+        {
+            os << ", Form is not signed";
+        }
         os << ", Form gradeToBeSiged is ";
         os << b.getGradeToBeSigned();
         os << " and, Form gradeToBeExecuted is ";
